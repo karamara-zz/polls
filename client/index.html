@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='pollApp'>
+	<script type="text/javascript" src='angular/angular.js'></script>
+	<script type="text/javascript" src='angular-route/angular-route.js'></script>
+	<script type="text/javascript" src='jquery/dist/jquery.js'></script>
+	<script type="text/javascript" src='bootstrap/dist/js/bootstrap.js'></script>
+	<script type='text/javascript' src='static/js/app.js'></script>
+	<script type="text/javascript" src='static/js/factories.js'></script>
+	<script type="text/javascript" src='static/js/controllers.js'></script>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class='container' ng-controller='pollController as pollCtrl'>
+		<div class='row' ng-view>
+			
+		</div>
+	</div>
+</body>
+</html>

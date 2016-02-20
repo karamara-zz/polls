@@ -1,0 +1,25 @@
+<header>
+	<div class='pull-right'>
+		<a href="#/create">Create a New Poll</a>
+		<a><span ng-click='pollCtrl.logout()'>Logout</span></a>
+	</div>
+</header>
+<div class='container'>
+	<h2>Current Polls</h2>
+	<p><input type="text" placeholder='Search' ng-model='pollCtrl.searchFilter' class='pull-right'></p>
+
+	<table class='table table-striped'>
+		<tr>
+			<th>Name</th>
+			<th>Survey Question</th>
+			<th>Date Posted</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat='poll in pollCtrl.polls | filter:pollCtrl.searchFilter'>
+			<td ng-bind='poll.name'></td>
+			<td><a><span ng-bind='poll.question' ng-click='pollCtrl.show(poll._id)'></span></a></td>
+			<td ng-bind='poll.created_at' ></td>
+			<td><a ng-click='pollCtrl.delete(poll)' ng-show='poll.name == pollCtrl.user.name '>Delete</a></td>
+		</tr>
+	</table>
+</div>

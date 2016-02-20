@@ -1,0 +1,48 @@
+<header>
+	<div class='pull-right'>
+		<a href="#dashboard">Cancel</a>
+	</div>
+</header>
+<div>
+	<h2>Put the question and options here:</h2>
+	{{pollCtrl.questionForm}}
+	<div ng-show='pollCtrl.newQuestion'>
+		<p class='text-danger' ng-show='questionForm.$invalid'>Must fill out all the forms</p>
+		<p class='text-danger' ng-show='questionForm.question.$invalid'>Questions must be at least 8 characters</p>
+		<p class='text-danger' ng-show='questionForm.option.$error.required'>Options must be at least 3 characters</p>
+	</div>
+
+	<form name='questionForm'>
+		<p>Question: <input name='question' type="text" ng-model='pollCtrl.newQuestion.question'
+			required
+			ng-required = 'true'
+			ng-minlength = '8'
+			ng-model-options='{updateOn:"blur"}'
+		></p>
+		<p>Option1 : <input name='option' type="text" 
+		ng-model="pollCtrl.newQuestion.option1"
+		ng-minlength = '3'
+		required='true'
+
+		></p>
+		<p>Option2 : <input name='option' type="text" 
+		ng-model="pollCtrl.newQuestion.option2"
+		ng-minlength= '3'
+		required='true'
+
+		></p>
+		<p>Option3 : <input name='option' type="text" 
+		ng-model="pollCtrl.newQuestion.option3"
+		ng-minlength= '3'
+		required='true'
+
+		></p>
+		<p>Option4 : <input name='option' type="text" 
+		ng-model="pollCtrl.newQuestion.option4"
+		ng-minlength= '3'
+		required='true'
+
+		></p>
+		<button type='submit' class='btn btn-primary' ng-click='pollCtrl.create(pollCtrl.newQuestion)'>Create Poll</button>
+	</form>
+</div>

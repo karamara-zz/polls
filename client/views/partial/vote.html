@@ -1,0 +1,21 @@
+<header>
+	<div class='pull-right'>
+		<a href="#/dashboard">Go to Polls</a>
+	</div>
+</header>
+<div class='container'>
+	<h2 ng-bind="pollCtrl.poll.question"></h2>
+	<p>Click the Vote button to choose one.</p>
+	<table class = 'table table-stripped'>
+		<tr>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat='option in pollCtrl.poll.options'>
+			<td ng-bind='option.option'></td>
+			<td ng-bind='option.count'></td>
+			<td><button class='btn btn-primary' ng-click='pollCtrl.vote(option)'>Vote</button></td>
+		</tr>
+	</table>
+</div>
